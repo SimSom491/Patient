@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Patient</string>
+    <string name="smtngelse">egyéb</string>
+    <string name="female">Nő</string>
+    <string name="male">Férfi</string>
+    <string name="phoneNumber">Telefonszám</string>
+    <string name="name">Név</string>
+    <string name="dateOfBirth">Születési dátum</string>
+    <string name="cancel">Mégse</string>
+    <string name="send">Küldés</string>
+    <string name="newPatient">Beteg Felvétele</string>
+</resources>
