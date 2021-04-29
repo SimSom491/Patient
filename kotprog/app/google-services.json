@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "65064561727",
+    "project_id": "patient-ee3df",
+    "storage_bucket": "patient-ee3df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65064561727:android:468ae74cc9a271bef1dc8a",
+        "android_client_info": {
+          "package_name": "com.example.patient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65064561727-gsebnpvepidgg4mijd0spl3j4qdj4jfr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.patient",
+            "certificate_hash": "581ce3dc1b0c1e13e05a71601c3c3b64ec08ab08"
+          }
+        },
+        {
+          "client_id": "65064561727-okutl2r47qgasd1uakvhiqj3po0ld9ej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHNET1hAX3Kl8qHbLYG1aW93Rh-r_tK1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65064561727-okutl2r47qgasd1uakvhiqj3po0ld9ej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

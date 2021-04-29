@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG =MainActivity.class.getName();
     private static final int KEY=15;
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     EditText phone;
     EditText birth;
     RadioGroup gender;
-
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         birth =  findViewById(R.id.patientBirthEditText);
         gender =  findViewById(R.id.radioGrp);
 
+        mAuth=FirebaseAuth.getInstance();
     }
 
     public void send(View view) {

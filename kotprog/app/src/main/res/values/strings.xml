@@ -9,4 +9,20 @@
     <string name="cancel">Mégse</string>
     <string name="send">Küldés</string>
     <string name="newPatient">Beteg Felvétele</string>
+    <string name="more">Részletek</string>
+    
+    <string-array name="names">
+        <item> Kovács László</item>
+        <item> Nagy Béla</item>
+        <item> Kedves Ferenc</item>
+        <item> Német Zoltán</item>
+    </string-array>
+    <array name="active">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+    </array>
+    
+    
 </resources>
