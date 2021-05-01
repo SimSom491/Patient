@@ -1,6 +1,7 @@
 package com.example.patient;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,16 +103,21 @@ public class PatientItemAdapter extends RecyclerView.Adapter<PatientItemAdapter.
              itemView.findViewById(R.id.itemmore).setOnClickListener(new View.OnClickListener() {
                  @Override
                  public void onClick(View v) {
-                     System.out.println("részletek");
+                     Intent intent=new Intent(mContext,MoreActivity.class);
+                     intent.putExtra("nev",mPatientName.getText());
+                     intent.putExtra("KEY", 15);
+                     mContext.startActivity(intent);
+
                  }
              });
+
 
         }
 
         public void bindTo(PatientItem currentItem) {
 
             mPatientName.setText(currentItem.getName());
-            mActive.setText(currentItem.isActive()?"Active":"Not Active");
+            mActive.setText(currentItem.getActive()?"Active":"Not Active");
             Glide.with(mContext);
         }
     }

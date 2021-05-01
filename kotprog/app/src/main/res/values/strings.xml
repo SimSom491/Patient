@@ -10,7 +10,11 @@
     <string name="send">Küldés</string>
     <string name="newPatient">Beteg Felvétele</string>
     <string name="more">Részletek</string>
-    
+    <string name="is_active">aktív:</string>
+    <string name="status">A beteg státusza actív?</string>
+    <string name="adress">Lakcím</string>
+    <string name="relative">Legközelebbi hozzátartozó</string>
+
     <string-array name="names">
         <item> Kovács László</item>
         <item> Nagy Béla</item>
@@ -23,6 +27,6 @@
         <item>1</item>
         <item>0</item>
     </array>
-    
-    
+
+
 </resources>

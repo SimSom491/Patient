@@ -6,120 +6,232 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <TextView
+        android:id="@+id/asd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="@string/newPatient"
         android:textAlignment="center"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/patientNameEditText"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/patientNameEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
-        android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
 
-    <EditText
-        android:id="@+id/patientNumberEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/phoneNumber"
-        android:inputType="phone"
-        app:layout_constraintBottom_toTopOf="@+id/patientBirthEditText"
-        app:layout_constraintTop_toBottomOf="@+id/patientNameEditText"
-        app:layout_constraintVertical_bias="0.32999998"
-        tools:layout_editor_absoluteX="0dp" />
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="543dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@id/asd"
+        app:layout_constraintTop_toBottomOf="@id/asd">
 
-    <EditText
-        android:id="@+id/patientBirthEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/dateOfBirth"
-        android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/radioGrp"
-        app:layout_constraintTop_toBottomOf="@+id/patientNumberEditText"
-        tools:layout_editor_absoluteX="0dp" />
 
-    <RadioGroup
-        android:id="@+id/radioGrp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-
-        android:orientation="horizontal"
-        android:paddingLeft="8dp"
-        android:paddingTop="64dp"
-
-        android:paddingRight="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patientBirthEditText"
-        tools:layout_editor_absoluteX="0dp">
-
-        <RadioButton
-            android:id="@+id/radioM"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="@string/male"
-            android:textSize="14sp" />
-
-        <RadioButton
-            android:id="@+id/radioF"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="@string/female"
-            android:textSize="14sp" />
-
-        <RadioButton
-            android:id="@+id/radioE"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="@string/smtngelse"
-            android:textSize="14sp" />
+            android:orientation="vertical">
 
 
-    </RadioGroup>
+            <EditText
+                android:id="@+id/patientNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="16dp" />
 
-    <Button
-        android:id="@+id/send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/send"
-        android:onClick="send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.171"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGrp"
-        app:layout_constraintVertical_bias="0.476"
-         />
+            <EditText
+                android:id="@+id/patientAdressEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/adress"
+                android:inputType="textPostalAddress"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="16dp" />
 
-    <Button
-        android:id="@+id/cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        android:onClick="cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/send"
-        app:layout_constraintTop_toBottomOf="@+id/radioGrp" />
+            <EditText
+                android:id="@+id/patientNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/phoneNumber"
+                android:inputType="phone"
+                app:layout_constraintBottom_toTopOf="@+id/isactive"
+                app:layout_constraintTop_toBottomOf="@+id/patientNameEditText"
+                app:layout_constraintVertical_bias="0.32999998"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/relative"
+                android:inputType="textPersonName"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <EditText
+                android:id="@+id/prefl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Preferált nyelv"
+                android:inputType="text"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <EditText
+                android:id="@+id/doctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Kezelőorvos neve"
+                android:inputType="textPersonName"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="16dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+
+                android:weightSum="10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/patientNumberEditText"
+                tools:layout_editor_absoluteX="0dp"
+
+                >
+
+                <TextView
+                    android:layout_width="293dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/status"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/isactive"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+
+                android:weightSum="10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/patientBirthEditText"
+                tools:layout_editor_absoluteX="0dp"
+
+                >
+
+                <TextView
+                    android:layout_width="240dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="2"
+                    android:text="Születési Dátum:"
+                    android:textSize="15sp" />
+
+                <DatePicker
+                    android:id="@+id/birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="351dp"
+                    android:scaleX="0.80"
+                    android:scaleY="0.80" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="50dp"
+                android:layout_weight="2"
+                android:text="Beteg neme:"
+
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGrp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingTop="20dp"
+
+                android:paddingRight="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/patientBirthEditText"
+                tools:layout_editor_absoluteX="0dp">
+
+                <RadioButton
+                    android:id="@+id/radioM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/male"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/radioF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="@string/female"
+                    android:textSize="14sp" />
+
+
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGrp"
+                tools:layout_editor_absoluteX="0dp">
+
+                <Button
+                    android:id="@+id/send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:onClick="send"
+                    android:text="@string/send"
+                    app:layout_constraintHorizontal_bias="0.171"
+                    app:layout_constraintVertical_bias="0.476" />
+
+                <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:onClick="cancel"
+                    android:text="@string/cancel" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,26 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".List">
+    tools:context=".ListActivity">
 
 
     <TextView
         android:id="@+id/statuscol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
         android:text="Státusz:"
-        tools:layout_editor_absoluteX="188dp"
-        tools:layout_editor_absoluteY="16dp"
         app:layout_constraintLeft_toRightOf="@id/namecol"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="30dp"/>
+        app:layout_constraintStart_toEndOf="@+id/namecol"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/namecol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Beteg neve:"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Beteg neve:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +32,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="50dp"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@id/namecol"
         tools:layout_editor_absoluteX="-16dp" />
