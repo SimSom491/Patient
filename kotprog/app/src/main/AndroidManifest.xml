@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Patient">
-        <activity android:name=".MoreActivity"></activity>
+        <activity android:name=".MoreActivity"/>
         <activity android:name=".ListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

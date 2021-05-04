@@ -10,7 +10,7 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="Beteg Neve"
         android:textSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +27,7 @@
 
         app:layout_constraintTop_toBottomOf="@+id/name">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -35,6 +36,7 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_weight="1"
@@ -45,7 +47,7 @@
                 android:id="@+id/adress"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 android:layout_weight="1"
                 android:text="cím"
                 android:textAlignment="center"
@@ -209,6 +211,41 @@
                 android:textAlignment="center"
                 android:textSize="20dp" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="140dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="40dp"
+                android:onClick="update"
+                android:text=" beteg adatainak frissítése"
+                app:layout_constraintHorizontal_bias="0.171"
+                app:layout_constraintVertical_bias="0.476" />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="118dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="50dp"
+                android:onClick="delete"
+                android:text="törlés" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="20dp"
+            android:onClick="back"
+            android:text="Vissza a főmenübe" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

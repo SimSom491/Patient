@@ -24,6 +24,7 @@ public class PatientItemAdapter extends RecyclerView.Adapter<PatientItemAdapter.
     private ArrayList<PatientItem> mPationsDataAll;
     private  Context mContext;
     private int lastPosition=-1;
+    private static int i=0;
 
     PatientItemAdapter(Context context, ArrayList<PatientItem> itemsData){
         this.mPationsData= itemsData;
@@ -45,7 +46,15 @@ public class PatientItemAdapter extends RecyclerView.Adapter<PatientItemAdapter.
         holder.bindTo(currentItem);
         if(holder.getAdapterPosition()> lastPosition){
             Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slider);
-            holder.itemView.startAnimation(animation);
+            Animation animation2 = AnimationUtils.loadAnimation(mContext, R.anim.slider2);
+            if (i%2==0){
+                holder.itemView.startAnimation(animation);
+                i++;
+            }else{
+                holder.itemView.startAnimation(animation2);
+                i++;
+            }
+
             lastPosition=holder.getAdapterPosition();
         }
     }

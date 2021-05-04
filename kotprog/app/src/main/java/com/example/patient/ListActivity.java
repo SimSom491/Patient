@@ -5,6 +5,7 @@ import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,6 +34,8 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+
+
         int key = getIntent().getIntExtra("KEY", 0);
         if (key != 15) {
             finish();
@@ -44,10 +47,10 @@ public class ListActivity extends AppCompatActivity {
         mAdapter = new PatientItemAdapter(this, mItemList);
 
         mRecyclerView.setAdapter(mAdapter);
-
+        mItemList.clear();
         mFirestore = FirebaseFirestore.getInstance();
         mItems = mFirestore.collection("patients");
-        queryData();
+
 
     }
 
@@ -113,11 +116,20 @@ public class ListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.new_patient) {
-            finish();
+            Intent intent=new Intent(this, MainActivity.class);
+            intent.putExtra("up", false);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
 
     }
 
+    @Override
+    protected void onResume() {
+
+        queryData();
+
+        super.onResume();
+    }
 }
