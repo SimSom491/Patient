@@ -22,14 +22,14 @@ public class PatientItemAdapter extends RecyclerView.Adapter<PatientItemAdapter.
 
     private ArrayList<PatientItem> mPationsData;
     private ArrayList<PatientItem> mPationsDataAll;
-    private  Context mContext;
-    private int lastPosition=-1;
-    private static int i=0;
+    private Context mContext;
+    private int lastPosition = -1;
+    private static int i = 0;
 
-    PatientItemAdapter(Context context, ArrayList<PatientItem> itemsData){
-        this.mPationsData= itemsData;
+    PatientItemAdapter(Context context, ArrayList<PatientItem> itemsData) {
+        this.mPationsData = itemsData;
         this.mPationsDataAll = itemsData;
-        this.mContext=context;
+        this.mContext = context;
 
 
     }
@@ -37,25 +37,25 @@ public class PatientItemAdapter extends RecyclerView.Adapter<PatientItemAdapter.
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.beteg,parent,false));
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.beteg, parent, false));
     }
 
     @Override
     public void onBindViewHolder(PatientItemAdapter.ViewHolder holder, int position) {
         PatientItem currentItem = mPationsData.get(position);
         holder.bindTo(currentItem);
-        if(holder.getAdapterPosition()> lastPosition){
+        if (holder.getAdapterPosition() > lastPosition) {
             Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slider);
             Animation animation2 = AnimationUtils.loadAnimation(mContext, R.anim.slider2);
-            if (i%2==0){
+            if (i % 2 == 0) {
                 holder.itemView.startAnimation(animation);
                 i++;
-            }else{
+            } else {
                 holder.itemView.startAnimation(animation2);
                 i++;
             }
 
-            lastPosition=holder.getAdapterPosition();
+            lastPosition = holder.getAdapterPosition();
         }
     }
 
@@ -69,24 +69,24 @@ public class PatientItemAdapter extends RecyclerView.Adapter<PatientItemAdapter.
         return patientFilter;
     }
 
-    private Filter patientFilter=new Filter() {
+    private Filter patientFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             ArrayList<PatientItem> filteredList = new ArrayList<>();
             FilterResults results = new FilterResults();
 
-            if(constraint==null|| constraint.length()==0){
-                results.count= mPationsDataAll.size();
-                results.values= mPationsDataAll;
-            }else{
+            if (constraint == null || constraint.length() == 0) {
+                results.count = mPationsDataAll.size();
+                results.values = mPationsDataAll;
+            } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (PatientItem item : mPationsDataAll) {
-                    if (item.getName().toLowerCase().contains(filterPattern)){
+                    if (item.getName().toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
                 }
-                results.count= filteredList.size();
-                results.values= filteredList;
+                results.count = filteredList.size();
+                results.values = filteredList;
             }
 
 
@@ -100,25 +100,24 @@ public class PatientItemAdapter extends RecyclerView.Adapter<PatientItemAdapter.
         }
     };
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mPatientName;
         private TextView mActive;
 
 
-        public ViewHolder(@NonNull View itemView){
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-             mPatientName=itemView.findViewById(R.id.itemnev);
-             mActive=itemView.findViewById(R.id.itemactive);
-             itemView.findViewById(R.id.itemmore).setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View v) {
-                     Intent intent=new Intent(mContext,MoreActivity.class);
-                     intent.putExtra("nev",mPatientName.getText());
-                     intent.putExtra("KEY", 15);
-                     mContext.startActivity(intent);
+            mPatientName = itemView.findViewById(R.id.itemnev);
+            mActive = itemView.findViewById(R.id.itemactive);
+            itemView.findViewById(R.id.itemmore).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, MoreActivity.class);
+                    intent.putExtra("nev", mPatientName.getText());
+                    mContext.startActivity(intent);
 
-                 }
-             });
+                }
+            });
 
 
         }
@@ -126,7 +125,7 @@ public class PatientItemAdapter extends RecyclerView.Adapter<PatientItemAdapter.
         public void bindTo(PatientItem currentItem) {
 
             mPatientName.setText(currentItem.getName());
-            mActive.setText(currentItem.getActive()?"Active":"Not Active");
+            mActive.setText(currentItem.getActive() ? "Aktív" : "Nem aktív");
             Glide.with(mContext);
         }
     }

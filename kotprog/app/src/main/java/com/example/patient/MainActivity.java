@@ -39,19 +39,18 @@ public class MainActivity extends AppCompatActivity {
     RadioButton genderm;
     RadioButton genderf;
 
-    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        update=false;
+        update = false;
 
         setContentView(R.layout.activity_main);
-        name =  findViewById(R.id.patientNameEditText);
-        phone =  findViewById(R.id.patientNumberEditText);
-        birth =  findViewById(R.id.birth);
-        genderm =  findViewById(R.id.radioM);
-        genderf= findViewById(R.id.radioF);
+        name = findViewById(R.id.patientNameEditText);
+        phone = findViewById(R.id.patientNumberEditText);
+        birth = findViewById(R.id.birth);
+        genderm = findViewById(R.id.radioM);
+        genderf = findViewById(R.id.radioF);
 
         active = findViewById(R.id.isactive);
         address = findViewById(R.id.patientAdressEditText);
@@ -59,10 +58,9 @@ public class MainActivity extends AppCompatActivity {
         perlang = findViewById(R.id.prefl);
         dr = findViewById(R.id.doctor);
 
-        mFirestore=FirebaseFirestore.getInstance();
+        mFirestore = FirebaseFirestore.getInstance();
         mItems = mFirestore.collection("patients");
 
-        mAuth=FirebaseAuth.getInstance();
 
     }
 
@@ -84,42 +82,40 @@ public class MainActivity extends AppCompatActivity {
         if (!update) {
 
             mItems.add(new PatientItem(patientName, akt, cim, patientPhone, date.toString(), close, patientGender, doctorbubo, pre));
-        }else{
-            mItems.whereEqualTo("name",getIntent().getStringExtra("name")).get().addOnSuccessListener(queryDocumentSnapshots -> {
+        } else {
+            mItems.whereEqualTo("name", getIntent().getStringExtra("name")).get().addOnSuccessListener(queryDocumentSnapshots -> {
                 for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                    mItems.document(document.getId()).update("name",patientName,"active",akt,"address",cim,"closestRelative",close,"dateOfBirth",date.toString(),"gender",patientGender,"generalPractitioner",doctorbubo,"phone",patientPhone);
+                    mItems.document(document.getId()).update("name", patientName, "active", akt, "address", cim, "closestRelative", close, "dateOfBirth", date.toString(), "gender", patientGender, "generalPractitioner", doctorbubo, "phone", patientPhone);
 
                 }
             });
 
         }
-        Intent intent=new Intent(this, ListActivity.class);
-        intent.putExtra("KEY", 15);
+        Intent intent = new Intent(this, ListActivity.class);
         startActivity(intent);
     }
 
     public void cancel(View view) {
-        Intent intent=new Intent(this, ListActivity.class);
-        intent.putExtra("KEY", 15);
+        Intent intent = new Intent(this, ListActivity.class);
         startActivity(intent);
     }
 
     @Override
     protected void onResume() {
-        if (getIntent().getBooleanExtra("up",false)){
-            update=true;
+        if (getIntent().getBooleanExtra("up", false)) {
+            update = true;
 
-            mItems.whereEqualTo("name",getIntent().getStringExtra("name")).get().addOnSuccessListener(queryDocumentSnapshots -> {
+            mItems.whereEqualTo("name", getIntent().getStringExtra("name")).get().addOnSuccessListener(queryDocumentSnapshots -> {
                 for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                    mItem=document.toObject(PatientItem.class);
+                    mItem = document.toObject(PatientItem.class);
 
                     name.setText(mItem.getName());
                     phone.setText(mItem.getPhone());
                     String[] evhonap = mItem.getDateOfBirth().split("-");
-                    birth.updateDate(Integer.parseInt(evhonap[0]),Integer.parseInt(evhonap[1])-1,Integer.parseInt(evhonap[2]));
-                    if (mItem.getGender()){
+                    birth.updateDate(Integer.parseInt(evhonap[0]), Integer.parseInt(evhonap[1]) - 1, Integer.parseInt(evhonap[2]));
+                    if (mItem.getGender()) {
                         genderm.toggle();
-                    }else{
+                    } else {
                         genderf.toggle();
                     }
                     active.setChecked(mItem.getActive());
@@ -137,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        update=false;
+        update = false;
 
         super.onPause();
     }

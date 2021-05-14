@@ -35,12 +35,6 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
 
-
-        int key = getIntent().getIntExtra("KEY", 0);
-        if (key != 15) {
-            finish();
-        }
-
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, gridNumber));
         mItemList = new ArrayList<>();
@@ -116,7 +110,7 @@ public class ListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.new_patient) {
-            Intent intent=new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("up", false);
             startActivity(intent);
             return true;

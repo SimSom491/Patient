@@ -3,7 +3,7 @@ package com.example.patient;
 import java.time.LocalDate;
 
 public class PatientItem {
-    private String name; 
+    private String name;
     private boolean active;
     private String address;
     private String phone;

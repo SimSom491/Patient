@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/newPatient"
+        android:text="@string/new_patient"
         android:textAlignment="center"
         android:textSize="25sp"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:ems="10"
-                android:hint="@string/name"
+                android:hint="@string/patient_name"
                 android:inputType="textPersonName"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="16dp" />
@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/phoneNumber"
+                android:hint="@string/phone_number"
                 android:inputType="phone"
                 app:layout_constraintBottom_toTopOf="@+id/isactive"
                 app:layout_constraintTop_toBottomOf="@+id/patientNameEditText"
@@ -80,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Preferált nyelv"
+                android:hint="@string/pref_lang"
                 android:inputType="text"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="16dp" />
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Kezelőorvos neve"
+                android:hint="@string/doctor_name"
                 android:inputType="textPersonName"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="16dp" />
@@ -113,7 +113,7 @@
                     android:layout_width="293dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:text="@string/status"
+                    android:text="@string/is_active"
                     android:textSize="15sp" />
 
                 <CheckBox
@@ -139,11 +139,11 @@
 
                 <TextView
                     android:layout_width="240dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="20dp"
                     android:layout_weight="2"
-                    android:text="Születési Dátum:"
+                    android:text="@string/date_of_birth"
                     android:textSize="15sp" />
 
                 <DatePicker
@@ -159,7 +159,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="50dp"
                 android:layout_weight="2"
-                android:text="Beteg neme:"
+                android:text="@string/gender"
 
                 android:textSize="18sp" />
 

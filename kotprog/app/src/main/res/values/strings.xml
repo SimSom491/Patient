@@ -1,19 +1,4 @@
 <resources>
-    <string name="app_name">Patient</string>
-    <string name="smtngelse">egyéb</string>
-    <string name="female">Nő</string>
-    <string name="male">Férfi</string>
-    <string name="phoneNumber">Telefonszám</string>
-    <string name="name">Név</string>
-    <string name="dateOfBirth">Születési dátum</string>
-    <string name="cancel">Mégse</string>
-    <string name="send">Küldés</string>
-    <string name="newPatient">Beteg Felvétele</string>
-    <string name="more">Részletek</string>
-    <string name="is_active">aktív:</string>
-    <string name="status">A beteg státusza actív?</string>
-    <string name="adress">Lakcím</string>
-    <string name="relative">Legközelebbi hozzátartozó</string>
 
     <string-array name="names">
         <item> Kovács László</item>
@@ -28,5 +13,33 @@
         <item>0</item>
     </array>
 
-
+    <string name="app_name">Patient</string>
+    <string name="status">Státusz:</string>
+    <string name="patient_name_dot">Beteg neve:</string>
+    <string name="patient_name">beteg neve</string>
+    <string name="more">Részletek</string>
+    <string name="new_patient">Beteg Felvétele</string>
+    <string name="adress">lakcím</string>
+    <string name="phone_number">telefonszám</string>
+    <string name="relative">legközelebbi hozzátartó neve</string>
+    <string name="pref_lang">Preferált nyelv</string>
+    <string name="doctor_name">Kezelőorvos neve</string>
+    <string name="is_active">aktív beteg?</string>
+    <string name="date_of_birth">Születési Dátum:</string>
+    <string name="gender">Beteg neme:</string>
+    <string name="male">Férfi</string>
+    <string name="female">Nő</string>
+    <string name="cancel">Mégse</string>
+    <string name="patient_adress">Beteg posta címe:</string>
+    <string name="date">Dátum</string>
+    <string name="none">Semleges</string>
+    <string name="num">Szám</string>
+    <string name="closest">Legközelebbi hozzátartozó neve:</string>
+    <string name="Benedek">Név</string>
+    <string name="romani">Román</string>
+    <string name="doc">Kezelőorvos</string>
+    <string name="update">beteg adatainak frissítése</string>
+    <string name="del">törlés</string>
+    <string name="back">Vissza a főmenübe</string>
+    <string name="send">Küldés</string>
 </resources>

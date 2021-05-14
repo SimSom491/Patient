@@ -3,39 +3,41 @@
     <androidx.cardview.widget.CardView android:layout_margin="8dp" android:layout_height="wrap_content" android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    -<RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent">
+    <RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent">
 
-    <TextView
-        android:id="@+id/itemnev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
-        android:padding="8dp"
-        android:text="beteg neve"
-        android:textColor="?android:textColorSecondary" />
+        <TextView
+            android:id="@+id/itemnev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="@string/patient_name"
+            android:textColor="?android:textColorSecondary" />
 
-    <TextView
-        android:id="@+id/itemactive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/itemnev"
-        android:layout_marginBottom="12dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:text="status:"
-        android:padding="8dp"
-        />
+        <TextView
+            android:id="@+id/itemactive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:layout_toStartOf="@+id/itemmore"
+            android:layout_toEndOf="@id/itemnev"
+            android:padding="8dp"
+            android:text="@string/status" />
 
-    <Button
-        android:id="@+id/itemmore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_toEndOf="@id/itemactive"
-        android:text="@string/more" />
+        <Button
+            android:id="@+id/itemmore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:text="@string/more" />
 
-</RelativeLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
